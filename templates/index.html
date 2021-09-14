@@ -16,8 +16,10 @@ body {
 <body>
  <div class="main">
 	<center><h2>Price prediction (Demo ML deployment)</h2>
-     <form action="{{ url_for('predict')}}"method="post">
-    	<input type="text"  name="vehiclename" placeholder="vehicle name" required="required"/>
+     <form action="{{ url_for('predict')}}"method="post" class="form">
+    	<input list="vehiclename"  name="vehiclename" required="required"/>
+		<datalist id="vehiclename">
+		</datalist>
 		<br>
 		<br>
     	<input type="float"  name="battery" placeholder="battery" required="required"/>
@@ -42,6 +44,7 @@ body {
     </form>
    <br>
 </center>
- </div>	
+</div>
+ <script src='{{url_for("static", filename="vehicle_names.js")}}'></script>
 </body>
 </html>
