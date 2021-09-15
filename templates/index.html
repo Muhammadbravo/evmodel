@@ -6,41 +6,54 @@
 <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
 <style>
 body {
-  background-image: url('/static/bac1.jpg');
+  background-image: url('/static/bac.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;  
-  background-size: cover;
+  background-size:cover;
+}
+label {
+	display: inline-block;
+  	width: 140px;
+  	text-align: right;
 }
 </style>
 </head>
 <body>
  <div class="main">
-	<center><h2>Price prediction (Demo ML deployment)</h2>
+	<center><h2 style="font-size: x-large;">Price Prediction (ML deployment)</h2>
      <form action="{{ url_for('predict')}}"method="post" class="form">
-    	<input list="vehiclename"  name="vehiclename" required="required"/>
+		<label for="vehiclename" style="color:black; font-size: medium;">Vehicle Name:</label>
+    	<input list="vehiclename"  name="vehiclename" placeholder="vehicle name" required="required"/>
 		<datalist id="vehiclename">
 		</datalist>
 		<br>
 		<br>
+		<label for="battery" style="color:black; font-size: medium;">Battery (kWh):</label>
     	<input type="float"  name="battery" placeholder="battery" required="required"/>
 		<br>
 		<br>
+		<label for="acceleration" style="color:black; font-size: medium;">Acceleration (sec):</label>
 		<input type="float" name="acceleration" placeholder="acceleration" required="required" />
 		<br>
 		<br>
+		<label for="topspeed" style="color:black; font-size: medium;">Top Speed (km/h):</label>
 		<input type="float" name="topspeed" placeholder="topspeed" required="required" />
 		<br>
 		<br>
+		<label for="distance" style="color:black; font-size: medium;">Range (Km):</label>
 		<input type="float" name="distance" placeholder="distance" required="required" />
 		<br>
 		<br>
+		<label for="efficiency" style="color:black; font-size: medium;">Efficiency (Wh/km):</label>
 		<input type="float" name="efficiency" placeholder="efficiency" required="required" />
 		<br>
 		<br>
+		<label for="fastcharge" style="color:black; font-size: medium;">Fastcharge (km/h):</label>
 		<input type="float" name="fastcharge" placeholder="fastcharge" required="required" />
 		<br>
 		<br>
-        <button type="submit" class="btn btn-primary btn-block btn-large">Predict Price</button>
+		<label></label>
+        <button type="submit" class="btn btn-primary btn-block btn-large" style="b">Predict Price</button>
     </form>
    <br>
 </center>
