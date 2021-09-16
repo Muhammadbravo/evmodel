@@ -80,7 +80,7 @@ def predict():
 			prediction = loaded_model.predict(reshaped_data)
 
 			# showing the prediction results in a UI
-			return render_template('predict.html',prediction=round(prediction[0]))
+			return render_template('predict.html',prediction=round(prediction[0]), vehicle_name = vehicle_name)
 		except Exception as e:
 			print('The Exception message is: ',e)
 			return 'something is wrong'
